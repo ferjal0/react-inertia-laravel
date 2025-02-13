@@ -3,8 +3,8 @@
 import { Atom, LayoutDashboard, LifeBuoy, Send } from 'lucide-react';
 import * as React from 'react';
 
+import { NavAdmin } from '@/components/nav-admin';
 import { NavMain } from '@/components/nav-main';
-import { NavProjectMembers } from '@/components/nav-project-members';
 import { NavSecondary } from '@/components/nav-secondary';
 import { NavUser } from '@/components/nav-user';
 import { ProjectSwitcher } from '@/components/project-switcher';
@@ -14,6 +14,8 @@ import {
     SidebarFooter,
     SidebarHeader,
 } from '@/components/ui/sidebar';
+import type { User } from '@/types';
+import { UserRole } from '@/types/enums';
 import { usePage } from '@inertiajs/react';
 
 const data = {
@@ -43,27 +45,10 @@ const data = {
             icon: Send,
         },
     ],
-    projectMembers: [
-        {
-            name: 'Tylor Otwell',
-            url: '#',
-            isConnected: true,
-        },
-        {
-            name: 'Jonathan Reinink',
-            url: '#',
-            isConnected: false,
-        },
-        {
-            name: 'Adam Wathan',
-            url: '#',
-            isConnected: false,
-        },
-    ],
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-    const user = usePage().props.auth.user;
+    const { user } = usePage().props.auth as { user: User };
 
     return (
         <Sidebar variant="inset" collapsible="icon" {...props}>
@@ -72,7 +57,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarHeader>
             <SidebarContent>
                 <NavMain items={data.navMain} />
-                <NavProjectMembers members={data.projectMembers} />
+                {user.role.name === UserRole.ADMINISTRATOR && <NavAdmin />}
                 <NavSecondary items={data.navSecondary} className="mt-auto" />
             </SidebarContent>
             <SidebarFooter>

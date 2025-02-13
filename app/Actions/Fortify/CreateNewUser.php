@@ -2,6 +2,8 @@
 
 namespace App\Actions\Fortify;
 
+use App\Enums\RoleType;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -31,10 +33,18 @@ class CreateNewUser implements CreatesNewUsers
             'password' => $this->passwordRules(),
         ])->validate();
 
+        // Get the default user role
+        $defaultRole = Role::where('name', RoleType::USER->value)->first();
+
+        if (!$defaultRole) {
+            throw new \RuntimeException('Default user role not found. Please run migrations.');
+        }
+
         return User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
+            'role_id' => $defaultRole->id,
         ]);
     }
 }

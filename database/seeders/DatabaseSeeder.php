@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\Role;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Enums\RoleType;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,11 +15,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // Seed roles first
+        $this->call(RoleSeeder::class);
 
+        // Get role IDs
+        $adminRole = Role::where('name', RoleType::ADMINISTRATOR->value)->first();
+        $userRole = Role::where('name', RoleType::USER->value)->first();
+
+        // Create admin user
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin User',
+            'email' => 'admin@example.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'), // password
+            'remember_token' => Str::random(10),
+            'role_id' => $adminRole->id,
+        ]);
+
+        // Create 499 regular users
+        User::factory(10000)->create([
+            'role_id' => $userRole->id,
         ]);
     }
 }
