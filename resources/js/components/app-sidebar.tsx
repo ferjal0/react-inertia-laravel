@@ -13,6 +13,7 @@ import {
     SidebarContent,
     SidebarFooter,
     SidebarHeader,
+    SidebarSeparator,
 } from '@/components/ui/sidebar';
 import type { User } from '@/types';
 import { UserRole } from '@/types/enums';
@@ -57,7 +58,12 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarHeader>
             <SidebarContent>
                 <NavMain items={data.navMain} />
-                {user.role.name === UserRole.ADMINISTRATOR && <NavAdmin />}
+                {user.role.name === UserRole.ADMINISTRATOR && (
+                    <>
+                        <SidebarSeparator />
+                        <NavAdmin />
+                    </>
+                )}
                 <NavSecondary items={data.navSecondary} className="mt-auto" />
             </SidebarContent>
             <SidebarFooter>

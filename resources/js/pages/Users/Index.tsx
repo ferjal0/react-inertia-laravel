@@ -33,7 +33,7 @@ import { useDebounce } from '@/hooks/use-debounce';
 import AuthenticatedLayout from '@/layouts/AuthenticatedLayout';
 import { cn } from '@/lib/utils';
 import { Head, router } from '@inertiajs/react';
-import { ArrowUpDown, Search, Trash2, Users } from 'lucide-react';
+import { ArrowUpDown, Search, Trash2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
 
@@ -153,12 +153,11 @@ export default function UsersIndex({ users, filters }: Props) {
         <AuthenticatedLayout>
             <Head title="Users" />
 
-            <div className="p-6">
-                <section className="flex flex-col gap-6">
+            <div className="flex max-w-7xl flex-col sm:px-6 lg:px-8">
+                <section className="flex flex-col gap-6 p-4 sm:p-6">
                     <header className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
-                            <Users className="h-6 w-6 text-gray-800 dark:text-gray-200" />
-                            <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                            <h2 className="text-primary text-lg font-medium">
                                 Users
                             </h2>
                         </div>

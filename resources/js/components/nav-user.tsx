@@ -2,15 +2,14 @@
 
 import {
     BadgeCheck,
-    Bell,
     ChevronsUpDown,
-    CreditCard,
     Lock,
     LogOut,
     Moon,
     PaintRoller,
-    Sparkles,
+    ShieldCheck,
     Sun,
+    UserIcon,
 } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -34,8 +33,10 @@ import {
     useSidebar,
 } from '@/components/ui/sidebar';
 import { User } from '@/types';
+import { UserRole } from '@/types/enums';
 import { Link } from '@inertiajs/react';
 import { useTheme } from './theme-provider';
+import { Tooltip, TooltipContent, TooltipTrigger } from './ui/tooltip';
 
 export function NavUser({ user }: { user: User }) {
     const { isMobile } = useSidebar();
@@ -97,15 +98,36 @@ export function NavUser({ user }: { user: User }) {
                                         {user.email}
                                     </span>
                                 </div>
+                                <div className="flex items-center justify-center rounded-md">
+                                    <Tooltip>
+                                        {user.role.name ===
+                                            UserRole.ADMINISTRATOR && (
+                                            <>
+                                                <TooltipContent>
+                                                    Administrator
+                                                </TooltipContent>
+                                                <TooltipTrigger>
+                                                    <ShieldCheck className="size-5" />
+                                                </TooltipTrigger>
+                                            </>
+                                        )}
+                                        {user.role.name === UserRole.USER &&
+                                            user.email_verified_at && (
+                                                <>
+                                                    <Tooltip>
+                                                        <TooltipContent>
+                                                            Verified
+                                                        </TooltipContent>
+                                                        <TooltipTrigger>
+                                                            <BadgeCheck className="size-5" />
+                                                        </TooltipTrigger>
+                                                    </Tooltip>
+                                                </>
+                                            )}
+                                    </Tooltip>
+                                </div>
                             </div>
                         </DropdownMenuLabel>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuGroup>
-                            <DropdownMenuItem disabled>
-                                <Sparkles />
-                                Upgrade to Pro
-                            </DropdownMenuItem>
-                        </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
                             <DropdownMenuItem asChild>
@@ -113,7 +135,7 @@ export function NavUser({ user }: { user: User }) {
                                     className="flex w-full items-center gap-2"
                                     href={route('profile.show')}
                                 >
-                                    <BadgeCheck />
+                                    <UserIcon />
                                     Profile
                                 </Link>
                             </DropdownMenuItem>
@@ -125,14 +147,6 @@ export function NavUser({ user }: { user: User }) {
                                     <Lock />
                                     Security
                                 </Link>
-                            </DropdownMenuItem>
-                            <DropdownMenuItem disabled>
-                                <CreditCard />
-                                Billing
-                            </DropdownMenuItem>
-                            <DropdownMenuItem disabled>
-                                <Bell />
-                                Notifications
                             </DropdownMenuItem>
                             <DropdownMenuSub>
                                 <DropdownMenuSubTrigger>

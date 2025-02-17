@@ -18,18 +18,18 @@ export default function Edit({
 
             <div className="flex max-w-7xl flex-col sm:px-6 lg:px-8">
                 {isUpdateProfileEnabled && (
-                    <div className="p-4 sm:p-8">
+                    <div className="p-4 sm:p-6">
                         <UpdateProfileInformationForm />
                     </div>
                 )}
 
                 {isUpdatePasswordEnabled && (
-                    <div className="p-4 sm:p-8">
+                    <div className="p-4 sm:p-6">
                         <UpdatePasswordForm />
                     </div>
                 )}
 
-                <div className="p-4 sm:p-8">
+                <div className="p-4 sm:p-6">
                     <DeleteUserForm />
                 </div>
             </div>

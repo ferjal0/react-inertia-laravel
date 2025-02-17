@@ -34,7 +34,7 @@ class UserController extends Controller
                     $query->orderBy("users.{$sort}", $direction);
                 });
 
-            return $query->paginate(25)
+            return $query->paginate(10)
                 ->through(function ($user) {
                     return [
                         'id' => $user->id,
