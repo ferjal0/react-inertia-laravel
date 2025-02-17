@@ -38,7 +38,7 @@ export function ProjectSwitcher({ projects }: { projects: Project[] }) {
                             size="lg"
                             className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
                         >
-                            <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                            <div className="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                                 <activeProject.logo className="size-4" />
                             </div>
                             <div className="grid flex-1 text-left text-sm leading-tight">
@@ -53,12 +53,12 @@ export function ProjectSwitcher({ projects }: { projects: Project[] }) {
                         </SidebarMenuButton>
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
-                        className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+                        className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
                         align="start"
                         side={isMobile ? 'bottom' : 'right'}
                         sideOffset={4}
                     >
-                        <DropdownMenuLabel className="text-xs text-muted-foreground">
+                        <DropdownMenuLabel className="text-muted-foreground text-xs">
                             Projects
                         </DropdownMenuLabel>
                         {projects.map((project, index) => (
@@ -78,10 +78,10 @@ export function ProjectSwitcher({ projects }: { projects: Project[] }) {
                         ))}
                         <DropdownMenuSeparator />
                         <DropdownMenuItem className="gap-2 p-2">
-                            <div className="flex size-6 items-center justify-center rounded-md border bg-background">
+                            <div className="bg-background flex size-6 items-center justify-center rounded-md border">
                                 <Plus className="size-4" />
                             </div>
-                            <div className="font-medium text-muted-foreground">
+                            <div className="text-muted-foreground font-medium">
                                 Add project
                             </div>
                         </DropdownMenuItem>

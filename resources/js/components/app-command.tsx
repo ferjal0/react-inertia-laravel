@@ -9,9 +9,11 @@ import {
     CommandSeparator,
 } from '@/components/ui/command';
 import { router } from '@inertiajs/react';
+import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { BadgeCheck, LayoutDashboard, Lock, Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useTheme } from './theme-provider';
+import { DialogDescription, DialogTitle } from './ui/dialog';
 
 interface NavigationItem {
     title: string;
@@ -66,6 +68,12 @@ export function AppCommand() {
 
     return (
         <CommandDialog open={isOpen} onOpenChange={setIsOpen}>
+            <VisuallyHidden>
+                <DialogTitle>Search</DialogTitle>
+                <DialogDescription>
+                    Use this command to search for specific commands.
+                </DialogDescription>
+            </VisuallyHidden>
             <Command>
                 <CommandInput placeholder="Search commands..." />
                 <CommandList>

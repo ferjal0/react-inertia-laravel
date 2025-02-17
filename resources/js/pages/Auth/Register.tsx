@@ -44,7 +44,7 @@ export default function Register({
                         <h1 className="text-2xl font-bold">
                             Register your account
                         </h1>
-                        <p className="text-balance text-sm text-muted-foreground">
+                        <p className="text-muted-foreground text-sm text-balance">
                             Enter your email below to register to your account
                         </p>
                     </div>

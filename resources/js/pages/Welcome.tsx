@@ -15,7 +15,7 @@ export default function Welcome({ auth }: PageProps) {
                             href="#"
                             className="flex items-center gap-2 font-medium"
                         >
-                            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                            <div className="bg-primary text-primary-foreground flex h-6 w-6 items-center justify-center rounded-md">
                                 <Command className="size-4" />
                             </div>
                             React Inertia Laravel
@@ -25,7 +25,7 @@ export default function Welcome({ auth }: PageProps) {
                             {auth.user ? (
                                 <Link
                                     href={route('dashboard')}
-                                    className="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                    className="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                 >
                                     Dashboard
                                 </Link>
@@ -33,13 +33,13 @@ export default function Welcome({ auth }: PageProps) {
                                 <>
                                     <Link
                                         href={route('login')}
-                                        className="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        className="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                     >
                                         Log in
                                     </Link>
                                     <Link
                                         href={route('register')}
-                                        className="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
+                                        className="rounded-md text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-hidden focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white"
                                     >
                                         Register
                                     </Link>

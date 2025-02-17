@@ -8,13 +8,13 @@ export default function AuthenticationLayout({
 }) {
     return (
         <div className="grid min-h-svh">
-            <div className="flex flex-col gap-4 bg-background p-6 md:p-10">
+            <div className="bg-background flex flex-col gap-4 p-6 md:p-10">
                 <div className="flex justify-center gap-2 md:justify-start">
                     <Link
                         href="/"
                         className="flex items-center gap-2 font-medium"
                     >
-                        <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                        <div className="bg-primary text-primary-foreground flex h-6 w-6 items-center justify-center rounded-md">
                             <Command className="size-4" />
                         </div>
                         React Inertia Laravel

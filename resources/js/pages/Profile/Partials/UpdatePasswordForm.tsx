@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import ErrorFeedback from '@/components/ui/error-feedback';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
@@ -75,9 +76,7 @@ export default function UpdatePasswordForm({
                     />
 
                     {errors.current_password && (
-                        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                            {errors.current_password}
-                        </p>
+                        <ErrorFeedback message={errors.current_password} />
                     )}
                 </div>
 
@@ -95,9 +94,7 @@ export default function UpdatePasswordForm({
                     />
 
                     {errors.password && (
-                        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                            {errors.password}
-                        </p>
+                        <ErrorFeedback message={errors.password} />
                     )}
                 </div>
 
@@ -118,9 +115,7 @@ export default function UpdatePasswordForm({
                     />
 
                     {errors.password_confirmation && (
-                        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                            {errors.password_confirmation}
-                        </p>
+                        <ErrorFeedback message={errors.password_confirmation} />
                     )}
                 </div>
 

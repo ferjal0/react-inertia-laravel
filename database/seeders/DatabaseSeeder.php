@@ -32,8 +32,8 @@ class DatabaseSeeder extends Seeder
             'role_id' => $adminRole->id,
         ]);
 
-        // Create 499 regular users
-        User::factory(10000)->create([
+        // Create 19 regular users
+        User::factory(19)->create([
             'role_id' => $userRole->id,
         ]);
     }
