@@ -14,6 +14,7 @@ import {
     SidebarFooter,
     SidebarHeader,
     SidebarSeparator,
+    useSidebar,
 } from '@/components/ui/sidebar';
 import type { User } from '@/types';
 import { UserRole } from '@/types/enums';
@@ -50,6 +51,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const { user } = usePage().props.auth as { user: User };
+    const sidebar = useSidebar();
 
     return (
         <Sidebar variant="inset" collapsible="icon" {...props}>
@@ -60,7 +62,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <NavMain items={data.navMain} />
                 {user.role.name === UserRole.ADMINISTRATOR && (
                     <>
-                        <SidebarSeparator />
+                        {sidebar.state === 'collapsed' && <SidebarSeparator />}
                         <NavAdmin />
                     </>
                 )}
