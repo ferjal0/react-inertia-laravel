@@ -153,8 +153,8 @@ export default function UsersIndex({ users, filters }: Props) {
         <AuthenticatedLayout>
             <Head title="Users" />
 
-            <div className="flex max-w-7xl flex-col sm:px-6 lg:px-8">
-                <section className="flex flex-col gap-6 p-4 sm:p-6">
+            <div className="flex max-w-7xl flex-col">
+                <section className="flex flex-col gap-6 px-8 py-4">
                     <header className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
                             <h2 className="text-primary text-lg font-medium">

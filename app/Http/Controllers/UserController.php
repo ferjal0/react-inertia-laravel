@@ -49,7 +49,7 @@ class UserController extends Controller
                 ->appends($request->query());
         });
 
-        return Inertia::render('Users/Index', [
+        return Inertia::render('Users/Show', [
             'users' => $users,
             'filters' => $request->only(['search', 'sort', 'direction']),
         ]);
