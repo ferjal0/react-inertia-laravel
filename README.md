@@ -1,6 +1,6 @@
 # React Inertia Laravel - Project Starter
 
-A modern, full-stack web application boilerplate built with Laravel 11, Inertia.js, React 19, TypeScript, Tailwind CSS, and Shadcn UI components.
+A modern, full-stack web application boilerplate built with Laravel 12, Inertia.js, React 19, TypeScript, Tailwind CSS, and Shadcn UI components.
 
 ![Starter Screenshots](https://github.com/user-attachments/assets/a550c79c-87eb-49a2-996b-8bb86991ec99)
 
@@ -28,7 +28,7 @@ This project implements a modern monolithic architecture using Laravel as the ba
 
 - **Backend**
 
-    - Laravel 11.x (PHP 8.x)
+    - Laravel 12.x (PHP 8.x)
     - Laravel Fortify for Auth features
     - SQLite
 
