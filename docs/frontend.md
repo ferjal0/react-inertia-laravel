@@ -22,7 +22,7 @@ resources/js/
 We use Shadcn UI for consistent, accessible components. Components are installed using the CLI:
 
 ```bash
-npx shadcn-ui@latest add button
+pnpm dlx shadcn-ui@latest add button
 ```
 
 Components are stored in `resources/js/components/ui/` and can be customized in `components.json`.
@@ -226,13 +226,13 @@ describe('Button', () => {
 
 ```bash
 # Run all tests
-npm run test
+pnpm run test
 
 # Run with watch mode
-npm run test:watch
+pnpm run test:watch
 
 # Run with coverage
-npm run test:coverage
+pnpm run test:coverage
 ```
 
 ## 🔍 Development Tools

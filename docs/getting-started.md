@@ -27,7 +27,7 @@ composer install
 3. **Install Node.js Dependencies**
 
 ```bash
-npm install
+pnpm install
 ```
 
 4. **Environment Setup**
@@ -49,7 +49,7 @@ php artisan migrate
 7. **Build Assets**
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 ## 🏃‍♂️ Development Workflow
@@ -57,7 +57,7 @@ npm run dev
 ### Start the Development Server
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Your application will be available at `http://react-inertia-laravel.local`.
@@ -72,13 +72,13 @@ php artisan test
 ./vendor/bin/pint
 
 # Type check TypeScript
-npm run typecheck
+pnpm run typecheck
 
 # Lint JavaScript/TypeScript
-npm run lint
+pnpm run lint
 
 # Format JavaScript/TypeScript
-npm run format
+pnpm run format
 ```
 
 ## 📦 Production Deployment
@@ -92,7 +92,7 @@ composer install --optimize-autoloader --no-dev
 2. **Build Frontend Assets**
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 3. **Cache Configuration**
