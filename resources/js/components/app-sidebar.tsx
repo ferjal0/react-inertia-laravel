@@ -14,6 +14,7 @@ import {
     SidebarFooter,
     SidebarHeader,
 } from '@/components/ui/sidebar';
+import { SharedData } from '@/types';
 import { usePage } from '@inertiajs/react';
 
 const data = {
@@ -63,7 +64,8 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-    const user = usePage().props.auth.user;
+    const { auth } = usePage<SharedData>().props;
+    const user = auth.user;
 
     return (
         <Sidebar variant="inset" collapsible="icon" {...props}>

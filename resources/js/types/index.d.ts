@@ -17,3 +17,9 @@ export type PageProps<
     };
     ziggy: Config & { location: string };
 };
+
+export interface SharedData {
+    auth: Auth;
+    ziggy: Config & { location: string };
+    [key: string]: unknown;
+}

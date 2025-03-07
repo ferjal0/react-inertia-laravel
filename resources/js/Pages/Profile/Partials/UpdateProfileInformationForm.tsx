@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import ErrorFeedback from '@/components/ui/error-feedback';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { SharedData } from '@/types';
 import { useForm, usePage } from '@inertiajs/react';
 import { Pencil } from 'lucide-react';
 import { FormEventHandler, useRef, useState } from 'react';
@@ -19,7 +20,8 @@ export default function UpdateProfileInformation({
     // Refs
     const photoInput = useRef<HTMLInputElement>(null);
 
-    const user = usePage().props.auth.user;
+    const { auth } = usePage<SharedData>().props;
+    const user = auth.user;
 
     const { data, setData, post, errors, processing } = useForm({
         _method: 'PATCH',

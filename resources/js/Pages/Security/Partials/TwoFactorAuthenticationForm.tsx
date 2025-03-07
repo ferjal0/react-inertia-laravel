@@ -6,6 +6,7 @@ import {
     InputOTPSlot,
 } from '@/components/ui/input-otp';
 import { Label } from '@/components/ui/label';
+import { SharedData } from '@/types';
 import { router, useForm, usePage } from '@inertiajs/react';
 import axios from 'axios';
 import { CheckCircle, Siren } from 'lucide-react';
@@ -27,7 +28,8 @@ export function TwoFactorAuthenticationForm() {
         code: '',
     });
 
-    const user = usePage().props.auth.user;
+    const { auth } = usePage<SharedData>().props;
+    const user = auth.user;
     const twoFactorEnabled = user.two_factor_confirmed_at !== null;
 
     // Functions
