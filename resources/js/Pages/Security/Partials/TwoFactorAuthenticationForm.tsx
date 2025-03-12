@@ -216,7 +216,7 @@ export function TwoFactorAuthenticationForm() {
                                 authentication device is lost.
                             </div>
 
-                            <div className="grid gap-1 rounded-lg bg-sidebar p-4 font-mono text-xs">
+                            <div className="bg-sidebar grid gap-1 rounded-lg p-4 font-mono text-xs">
                                 {recoveryCodes.map((code) => (
                                     <div key={code}>{code}</div>
                                 ))}

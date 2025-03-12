@@ -19,7 +19,7 @@ export default function VerifyEmail({ status }: { status?: string }) {
             <form className="flex flex-col gap-6" onSubmit={submit}>
                 <div className="flex flex-col items-center gap-4 text-center">
                     <h1 className="text-2xl font-bold">Verify your email</h1>
-                    <p className="text-balance text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm text-balance">
                         Please verify your email address by clicking the link in
                         the email we sent you. If you haven't received it, we
                         can send a new verification link.
