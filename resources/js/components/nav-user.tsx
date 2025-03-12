@@ -2,14 +2,11 @@
 
 import {
     BadgeCheck,
-    Bell,
     ChevronsUpDown,
-    CreditCard,
     Lock,
     LogOut,
     Moon,
-    PaintRoller,
-    Sparkles,
+    Palette,
     Sun,
 } from 'lucide-react';
 
@@ -101,13 +98,6 @@ export function NavUser({ user }: { user: User }) {
                         </DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                            <DropdownMenuItem disabled>
-                                <Sparkles />
-                                Upgrade to Pro
-                            </DropdownMenuItem>
-                        </DropdownMenuGroup>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuGroup>
                             <DropdownMenuItem asChild>
                                 <Link
                                     className="flex w-full items-center gap-2"
@@ -126,18 +116,10 @@ export function NavUser({ user }: { user: User }) {
                                     Security
                                 </Link>
                             </DropdownMenuItem>
-                            <DropdownMenuItem disabled>
-                                <CreditCard />
-                                Billing
-                            </DropdownMenuItem>
-                            <DropdownMenuItem disabled>
-                                <Bell />
-                                Notifications
-                            </DropdownMenuItem>
                             <DropdownMenuSub>
-                                <DropdownMenuSubTrigger>
-                                    <PaintRoller />
-                                    <span>Theme</span>
+                                <DropdownMenuSubTrigger className="flex w-full items-center gap-2">
+                                    <Palette className="text-muted-foreground size-4" />
+                                    Theme
                                 </DropdownMenuSubTrigger>
                                 <DropdownMenuPortal>
                                     <DropdownMenuSubContent>

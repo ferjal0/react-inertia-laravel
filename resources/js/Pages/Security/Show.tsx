@@ -12,9 +12,9 @@ export default function Show({
         <AuthenticatedLayout>
             <Head title="Profile" />
 
-            <div className="flex max-w-7xl flex-col sm:px-6 lg:px-8">
+            <div className="flex flex-col">
                 {isTwoFactorAuthenticationFeatureEnabled && (
-                    <div className="p-4 sm:p-8">
+                    <div className="p-4 sm:p-8 sm:pt-4">
                         <TwoFactorAuthenticationForm />
                     </div>
                 )}
