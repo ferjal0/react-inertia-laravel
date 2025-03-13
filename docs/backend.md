@@ -2,7 +2,7 @@
 
 ## 🏗️ Backend Architecture
 
-The backend of this application is built with Laravel 12, following modern best practices and design patterns.
+The backend of this application is built with Laravel 12.x and PHP 8.4, following modern best practices and design patterns. It uses Laravel Fortify for authentication, Laravel Sanctum for API tokens, and Ziggy for route handling.
 
 ### Directory Structure
 
@@ -90,6 +90,16 @@ The project uses SQLite by default, but supports any database. Configure your da
 DB_CONNECTION=sqlite
 DB_DATABASE=database.sqlite
 ```
+
+### Database Seeding
+
+The project includes database seeders to create initial data. Run migrations with seeders:
+
+```bash
+php artisan migrate --seed
+```
+
+This will create an initial user account that you can use to access the dashboard.
 
 ### Key Models
 
