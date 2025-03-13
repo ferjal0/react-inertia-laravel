@@ -113,41 +113,74 @@ Dashboard.layout = (page: React.ReactNode) => (
 )
 ```
 
-## 🎨 Styling with Tailwind
+## 🎨 Styling with Tailwind 4
 
 ### Configuration
 
-Tailwind is configured in `tailwind.config.js` with custom theme settings:
+Tailwind 4 is configured with a modern CSS variables approach and full dark mode support. The configuration is defined in `resources/css/app.css`:
 
-```javascript
-module.exports = {
-    content: ['./resources/js/**/*.{js,ts,jsx,tsx}'],
-    theme: {
-        extend: {
-            colors: {
-                // Custom colors
-            },
-        },
-    },
-    plugins: [
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/typography'),
-    ],
-};
+```css
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin 'tailwindcss-animate';
+
+@theme {
+  --font-sans: Figtree, ui-sans-serif, system-ui, /* ... */;
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+}
+```
+
+### Theme System
+
+The theme system uses CSS variables for colors, with both light and dark mode support:
+
+```css
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    /* ... other color variables */
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    /* ... dark mode color variables */
+  }
+}
 ```
 
 ### CSS Organization
 
 ```
 resources/css/
-├── app.css        # Main CSS file
+├── app.css        # Main CSS file with theme configuration
 └── components/    # Component-specific styles
 ```
 
+### Key Features
+
+1. **Modern CSS Variables**: Uses CSS custom properties for dynamic theming
+2. **Dark Mode**: Built-in `.dark` class variant
+3. **Semantic Colors**: HSL-based color system for consistent theming
+4. **Component Tokens**: Dedicated variables for specific UI components
+5. **Animation Support**: Built-in animation utilities via `tailwindcss-animate`
+
 ### Styling Best Practices
 
-1. Use Tailwind's utility classes
-2. Leverage Shadcn UI's built-in styling system
+1. Use semantic color variables (e.g., `bg-background`, `text-foreground`)
+2. Leverage the new border color system with `border-border`
+3. Use radius variables for consistent component shapes
+4. Apply dark mode utilities with the `.dark` class variant
+5. Utilize Shadcn UI's built-in styling system
 
 ## 🔄 State Management
 

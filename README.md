@@ -36,16 +36,12 @@ This project implements a modern monolithic architecture using Laravel as the ba
 
 - **Frontend**
 
-    - React 19
-    - TypeScript 5.8.2
-    - Vite 6.2.0
-    - Tailwind CSS 4
+    - React ^19
+    - TypeScript ^5
+    - Vite ^6
+    - Tailwind CSS ^4
     - Shadcn UI Components
-    - Lucide React Icons 0.473.0
-    - Class Variance Authority 0.7.1
-    - clsx 2.1.1
-    - tailwind-merge 2.6.0
-    - sonner 1.7.4
+    - Lucide React Icons
 
 - **Frontend-Backend communication**
     - Inertia.js for seamless frontend-backend communication
