@@ -1,16 +1,12 @@
 import { Button } from '@/components/ui/button';
+import ErrorFeedback from '@/components/ui/error-feedback';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { cn } from '@/lib/utils';
 import { useForm } from '@inertiajs/react';
 import { FormEventHandler, useRef } from 'react';
 import { toast } from 'sonner';
 
-export default function UpdatePasswordForm({
-    className = '',
-}: {
-    className?: string;
-}) {
+export default function UpdatePasswordForm() {
     const passwordInput = useRef<HTMLInputElement>(null);
     const currentPasswordInput = useRef<HTMLInputElement>(null);
 
@@ -46,13 +42,11 @@ export default function UpdatePasswordForm({
     };
 
     return (
-        <section className={cn('flex flex-col gap-6', className)}>
+        <section className="flex flex-col gap-6">
             <header className="flex flex-col gap-2">
-                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                    Update Password
-                </h2>
+                <h2 className="text-lg font-medium">Update Password</h2>
 
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-muted-foreground text-sm">
                     Ensure your account is using a long, random password to stay
                     secure.
                 </p>
@@ -75,9 +69,7 @@ export default function UpdatePasswordForm({
                     />
 
                     {errors.current_password && (
-                        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                            {errors.current_password}
-                        </p>
+                        <ErrorFeedback message={errors.current_password} />
                     )}
                 </div>
 
@@ -95,9 +87,7 @@ export default function UpdatePasswordForm({
                     />
 
                     {errors.password && (
-                        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                            {errors.password}
-                        </p>
+                        <ErrorFeedback message={errors.password} />
                     )}
                 </div>
 
@@ -118,9 +108,7 @@ export default function UpdatePasswordForm({
                     />
 
                     {errors.password_confirmation && (
-                        <p className="mt-2 text-sm text-red-600 dark:text-red-400">
-                            {errors.password_confirmation}
-                        </p>
+                        <ErrorFeedback message={errors.password_confirmation} />
                     )}
                 </div>
 

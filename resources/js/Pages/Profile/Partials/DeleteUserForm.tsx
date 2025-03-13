@@ -5,17 +5,14 @@ import {
     DialogDescription,
     DialogTitle,
 } from '@/components/ui/dialog';
+import ErrorFeedback from '@/components/ui/error-feedback';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useForm } from '@inertiajs/react';
 import { Loader2 } from 'lucide-react';
 import { FormEventHandler, useEffect, useRef, useState } from 'react';
 
-export default function DeleteUserForm({
-    className = '',
-}: {
-    className?: string;
-}) {
+export default function DeleteUserForm() {
     const [confirmingUserDeletion, setConfirmingUserDeletion] = useState(false);
     const passwordInput = useRef<HTMLInputElement>(null);
 
@@ -65,13 +62,11 @@ export default function DeleteUserForm({
     };
 
     return (
-        <section className={`flex max-w-xl flex-col gap-6 ${className}`}>
+        <section className="flex max-w-xl flex-col gap-6">
             <header className="flex flex-col gap-2">
-                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                    Delete Account
-                </h2>
+                <h2 className="text-lg font-medium">Delete Account</h2>
 
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-muted-foreground text-sm">
                     Once your account is deleted, all of its resources and data
                     will be permanently deleted. Before deleting your account,
                     please download any data or information that you wish to
@@ -94,11 +89,11 @@ export default function DeleteUserForm({
                 }}
             >
                 <DialogContent>
-                    <DialogTitle className="text-lg font-medium text-gray-900 dark:text-gray-100">
+                    <DialogTitle className="text-lg font-medium">
                         Are you sure you want to delete your account?
                     </DialogTitle>
 
-                    <DialogDescription className="text-sm text-gray-600 dark:text-gray-400">
+                    <DialogDescription className="text-muted-foreground text-sm">
                         Once your account is deleted, all of its resources and
                         data will be permanently deleted. Please enter your
                         password to confirm you would like to permanently delete
@@ -129,9 +124,7 @@ export default function DeleteUserForm({
                             />
 
                             {errors.password && (
-                                <div className="mt-1 text-sm text-red-600 dark:text-red-400">
-                                    {errors.password}
-                                </div>
+                                <ErrorFeedback message={errors.password} />
                             )}
                         </div>
 

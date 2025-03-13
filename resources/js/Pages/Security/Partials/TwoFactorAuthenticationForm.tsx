@@ -118,11 +118,9 @@ export function TwoFactorAuthenticationForm() {
     return (
         <section className={'flex max-w-xl flex-col gap-10'}>
             <header className="flex flex-col gap-2">
-                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                    2FA
-                </h2>
+                <h2 className="text-lg font-medium">2FA</h2>
 
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-muted-foreground text-sm">
                     Add additional security to your account using two factor
                     authentication.
                 </p>

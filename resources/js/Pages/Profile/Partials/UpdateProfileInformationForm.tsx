@@ -9,11 +9,7 @@ import { Pencil } from 'lucide-react';
 import { FormEventHandler, useRef, useState } from 'react';
 import { toast } from 'sonner';
 
-export default function UpdateProfileInformation({
-    className = '',
-}: {
-    className?: string;
-}) {
+export default function UpdateProfileInformation() {
     // State
     const [photoPreview, setPhotoPreview] = useState<string | null>(null);
 
@@ -77,18 +73,16 @@ export default function UpdateProfileInformation({
     };
 
     return (
-        <section className={className}>
+        <section className="flex flex-col gap-6">
             <header className="flex flex-col gap-2">
-                <h2 className="text-lg font-medium text-gray-900 dark:text-gray-100">
-                    Profile Information
-                </h2>
+                <h2 className="text-lg font-medium">Profile Information</h2>
 
-                <p className="text-sm text-gray-600 dark:text-gray-400">
+                <p className="text-muted-foreground text-sm">
                     Update your account's profile information and email address.
                 </p>
             </header>
 
-            <form onSubmit={submit} className="mt-6 space-y-6">
+            <form onSubmit={submit} className="flex flex-col gap-4">
                 <div className="col-span-6 sm:col-span-4">
                     {/* Hidden file input for photo upload */}
                     <input
@@ -102,7 +96,7 @@ export default function UpdateProfileInformation({
                     />
 
                     {/* Profile Photo Preview */}
-                    <div className="mt-2 flex items-center gap-4">
+                    <div className="flex items-center gap-4">
                         <div className="group relative">
                             <Avatar className="h-20 w-20 rounded-lg">
                                 <AvatarImage
@@ -124,9 +118,7 @@ export default function UpdateProfileInformation({
                         </div>
                     </div>
 
-                    <ErrorFeedback className="mt-2">
-                        {errors.photo}
-                    </ErrorFeedback>
+                    <ErrorFeedback message={errors.photo} />
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -141,7 +133,7 @@ export default function UpdateProfileInformation({
                         autoComplete="name"
                     />
 
-                    <ErrorFeedback className="mt-2" message={errors.name} />
+                    <ErrorFeedback message={errors.name} />
                 </div>
 
                 <div className="flex flex-col gap-2">
@@ -157,7 +149,7 @@ export default function UpdateProfileInformation({
                         autoComplete="username"
                     />
 
-                    <ErrorFeedback className="mt-2" message={errors.email} />
+                    <ErrorFeedback message={errors.email} />
                 </div>
 
                 <div className="flex items-center gap-4">

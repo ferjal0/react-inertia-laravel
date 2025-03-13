@@ -98,7 +98,7 @@ export default function ConfirmWithPassword({
                     </DialogHeader>
 
                     <div className="flex flex-col gap-4">
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                        <p className="text-muted-foreground text-sm">
                             {content}
                         </p>
 
