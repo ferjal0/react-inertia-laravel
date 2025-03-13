@@ -7,7 +7,6 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
 } from '@/components/ui/sidebar';
-import { Link } from '@inertiajs/react';
 
 interface NavSecondaryProps {
     items: {
@@ -26,10 +25,10 @@ export function NavSecondary({ items, ...props }: NavSecondaryProps) {
                     {items.map((item) => (
                         <SidebarMenuItem key={item.title}>
                             <SidebarMenuButton asChild size="sm">
-                                <Link href={item.url}>
+                                <a href={item.url} target="_blank">
                                     <item.icon />
                                     <span>{item.title}</span>
-                                </Link>
+                                </a>
                             </SidebarMenuButton>
                         </SidebarMenuItem>
                     ))}

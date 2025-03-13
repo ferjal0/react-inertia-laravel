@@ -47,7 +47,7 @@ export default function TwoFactorChallenge() {
                     </InputOTPGroup>
                 </InputOTP>
 
-                <p className="text-balance text-sm text-muted-foreground">
+                <p className="text-muted-foreground text-sm text-balance">
                     Please enter the one-time password from your authenticator
                     app.
                 </p>

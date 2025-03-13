@@ -2,16 +2,19 @@
 
 ## 🏗️ Frontend Architecture
 
-The frontend is built with React 18, TypeScript, and Inertia.js, providing a modern single-page application experience while maintaining the benefits of server-side rendering.
+The frontend is built with React 19, TypeScript 5.8.2, and Inertia.js v2, providing a modern single-page application experience while maintaining the benefits of server-side rendering. It uses Vite 6.2.0 as the bundler and includes Tailwind CSS 4, Shadcn UI, and Lucide React 0.473.0 for the UI components.
 
 ### Directory Structure
 
 ```
 resources/js/
 ├── components/     # Reusable UI components
+│   └── ui/        # Shadcn UI components
 ├── layouts/        # Page layouts
-├── pages/         # Page components
+├── Pages/         # Page components
 ├── types/         # TypeScript definitions
+├── hooks/         # Custom React hooks
+├── lib/           # Library code and utilities
 └── utils/         # Utility functions
 ```
 
@@ -19,7 +22,15 @@ resources/js/
 
 ### Shadcn UI Integration
 
-We use Shadcn UI for consistent, accessible components. Components are installed using the CLI:
+We use Shadcn UI for consistent, accessible components with the following configuration:
+
+- Style: default
+- Base color: neutral
+- CSS variables mode enabled
+- TypeScript and React strict mode enabled
+- Lucide React icons integration
+
+Components are installed using the CLI:
 
 ```bash
 pnpm dlx shadcn-ui@latest add button

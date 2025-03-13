@@ -27,7 +27,7 @@ export default function ForgotPassword({ status }: { status?: string }) {
                     <h1 className="text-2xl font-bold">
                         Forgot your password?
                     </h1>
-                    <p className="text-balance text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm text-balance">
                         No problem. Let us know your email address and we will
                         email you a password reset link.
                     </p>

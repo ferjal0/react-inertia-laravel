@@ -1,10 +1,16 @@
 'use client';
 
-import { Atom, LayoutDashboard, LifeBuoy, Send } from 'lucide-react';
+import {
+    Atom,
+    Book,
+    BookCheck,
+    BookHeart,
+    BookImage,
+    LayoutDashboard,
+} from 'lucide-react';
 import * as React from 'react';
 
 import { NavMain } from '@/components/nav-main';
-import { NavProjectMembers } from '@/components/nav-project-members';
 import { NavSecondary } from '@/components/nav-secondary';
 import { NavUser } from '@/components/nav-user';
 import { ProjectSwitcher } from '@/components/project-switcher';
@@ -34,31 +40,24 @@ const data = {
     ],
     navSecondary: [
         {
-            title: 'Support',
-            url: '/dashboard',
-            icon: LifeBuoy,
+            title: 'Readme',
+            url: 'https://github.com/ferjal0/react-inertia-laravel/blob/main/README.md',
+            icon: Book,
         },
         {
-            title: 'Feedback',
-            url: '/dashboard',
-            icon: Send,
-        },
-    ],
-    projectMembers: [
-        {
-            name: 'Tylor Otwell',
-            url: '#',
-            isConnected: true,
+            title: 'Getting Started',
+            url: 'https://github.com/ferjal0/react-inertia-laravel/blob/main/docs/getting-started.md',
+            icon: BookHeart,
         },
         {
-            name: 'Jonathan Reinink',
-            url: '#',
-            isConnected: false,
+            title: 'Frontend Docs',
+            url: 'https://github.com/ferjal0/react-inertia-laravel/blob/main/docs/frontend.md',
+            icon: BookImage,
         },
         {
-            name: 'Adam Wathan',
-            url: '#',
-            isConnected: false,
+            title: 'Backend Docs',
+            url: 'https://github.com/ferjal0/react-inertia-laravel/blob/main/docs/backend.md',
+            icon: BookCheck,
         },
     ],
 };
@@ -74,7 +73,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             </SidebarHeader>
             <SidebarContent>
                 <NavMain items={data.navMain} />
-                <NavProjectMembers members={data.projectMembers} />
                 <NavSecondary items={data.navSecondary} className="mt-auto" />
             </SidebarContent>
             <SidebarFooter>

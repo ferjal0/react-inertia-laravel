@@ -10,11 +10,11 @@ export default function PasswordResetSent() {
 
             <div className="flex flex-col gap-6">
                 <div className="flex flex-col items-center gap-4 text-center">
-                    <div className="rounded-full bg-muted p-3">
+                    <div className="bg-muted rounded-full p-3">
                         <MailOpen className="size-6" />
                     </div>
                     <h1 className="text-2xl font-bold">Check your email</h1>
-                    <p className="text-balance text-sm text-muted-foreground">
+                    <p className="text-muted-foreground text-sm text-balance">
                         We have sent a password reset link to your email
                         address. Please check your inbox and follow the
                         instructions to reset your password.

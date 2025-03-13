@@ -4,7 +4,7 @@
 
 Before you begin, ensure you have the following installed:
 
-- PHP 8.x
+- PHP 8.4
 - Node.js (LTS version recommended)
 - Composer
 - Git
@@ -40,11 +40,13 @@ php artisan key:generate
 5. **Configure Your Environment**
    Edit `.env` file with your database and other configuration settings:
 
-6. **Create Database**
+6. **Create Database and Initial User**
 
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
+
+Using the `--seed` flag will create an initial user you can use to access the dashboard.
 
 7. **Build Assets**
 

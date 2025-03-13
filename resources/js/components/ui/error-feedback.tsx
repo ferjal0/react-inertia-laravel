@@ -9,7 +9,7 @@ export default function ErrorFeedback({
         <p
             {...props}
             className={
-                'text-balance text-center text-sm text-red-600 dark:text-red-400 ' +
+                'text-center text-sm text-balance text-red-600 dark:text-red-400 ' +
                 className
             }
         >

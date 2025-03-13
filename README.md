@@ -1,6 +1,6 @@
 # React Inertia Laravel - Project Starter
 
-A modern, full-stack web application boilerplate built with Laravel 12, Inertia.js, React 19, TypeScript, Tailwind CSS, and Shadcn UI components.
+A modern, full-stack web application boilerplate built with Laravel 12.x, Inertia.js v2, React 19, TypeScript 5.8.2, Tailwind CSS 4, and Shadcn UI components.
 
 ![Starter Screenshots](https://github.com/user-attachments/assets/a550c79c-87eb-49a2-996b-8bb86991ec99)
 
@@ -28,18 +28,24 @@ This project implements a modern monolithic architecture using Laravel as the ba
 
 - **Backend**
 
-    - Laravel 12.x (PHP 8.x)
-    - Laravel Fortify for Auth features
+    - Laravel 12.x (PHP 8.4)
+    - Laravel Fortify 1.25 for Auth features
+    - Laravel Sanctum 4.0 for API tokens
+    - Ziggy 2.0 for route handling
     - SQLite
 
 - **Frontend**
 
     - React 19
-    - TypeScript 5.7
-    - Vite 6
-    - Tailwind CSS
+    - TypeScript 5.8.2
+    - Vite 6.2.0
+    - Tailwind CSS 4
     - Shadcn UI Components
-    - Lucide React Icons
+    - Lucide React Icons 0.473.0
+    - Class Variance Authority 0.7.1
+    - clsx 2.1.1
+    - tailwind-merge 2.6.0
+    - sonner 1.7.4
 
 - **Frontend-Backend communication**
     - Inertia.js for seamless frontend-backend communication
@@ -48,7 +54,7 @@ This project implements a modern monolithic architecture using Laravel as the ba
 
 ### Prerequisites
 
-- PHP 8.x
+- PHP 8.4
 - Composer
 - Node.js (Latest LTS version)
 - SQLite (but you can use any other RDBMS)
@@ -82,11 +88,13 @@ cp .env.example .env
 php artisan key:generate
 ```
 
-5. Configure your database in `.env` and run migrations:
+5. Configure your database in `.env` and run migrations with seeding:
 
 ```bash
-php artisan migrate
+php artisan migrate --seed
 ```
+
+This will create the database tables and an initial user account that you can use to access the dashboard.
 
 6. Start the development servers:
 

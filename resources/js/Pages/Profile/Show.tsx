@@ -16,20 +16,20 @@ export default function Edit({
         <AuthenticatedLayout>
             <Head title="Profile" />
 
-            <div className="flex max-w-7xl flex-col sm:px-6 lg:px-8">
+            <div className="flex flex-col">
                 {isUpdateProfileEnabled && (
-                    <div className="p-4 sm:p-8">
+                    <div className="p-4 sm:p-8 sm:pt-4">
                         <UpdateProfileInformationForm />
                     </div>
                 )}
 
                 {isUpdatePasswordEnabled && (
-                    <div className="p-4 sm:p-8">
+                    <div className="p-4 sm:p-8 sm:pt-4">
                         <UpdatePasswordForm />
                     </div>
                 )}
 
-                <div className="p-4 sm:p-8">
+                <div className="p-4 sm:p-8 sm:pt-4">
                     <DeleteUserForm />
                 </div>
             </div>
