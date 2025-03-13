@@ -231,11 +231,15 @@ export function TwoFactorAuthenticationForm() {
             )}
 
             {twoFactorEnabled && !qrCode && (
-                <div className="flex flex-col gap-6">
-                    <div className="flex items-center gap-4 text-sm">
-                        <CheckCircle className="text-green-500" />
-                        <h3>You've already enabled 2FA.</h3>
-                    </div>
+                <div className="flex flex-col gap-10">
+                    <Alert variant="default">
+                        <CheckCircle className="h-4 w-4" />
+                        <AlertTitle>You're all set</AlertTitle>
+                        <AlertDescription>
+                            2FA is enabled for your account. You can still
+                            disable it if you no longer need it.
+                        </AlertDescription>
+                    </Alert>
                     {recoveryCodes.length > 0 && (
                         <div className="flex max-w-xl flex-col gap-4">
                             <div className="text-sm">
